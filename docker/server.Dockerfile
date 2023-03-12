@@ -12,8 +12,8 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # package.json 과 package-lock.json을 복사
-COPY package*.json .
-COPY tsconfig.json .
+COPY package*.json ./
+COPY tsconfig.json ./
 COPY src/ ./src/
 
 # 의존성 설치 및 build
