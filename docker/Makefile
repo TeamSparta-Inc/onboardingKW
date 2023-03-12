@@ -3,8 +3,8 @@
 
 # 변수 설정
 ECR             := 497217256558.dkr.ecr.ap-northeast-1.amazonaws.com
-ECR_URI_PROXY   := ${ECR_URI}/onboarding-nginx-kw
-ECR_URI_SERVER  := ${ECR_URI}/onboarding-backend-kw
+ECR_URI_PROXY   := ${ECR}/onboarding-nginx-kw
+ECR_URI_SERVER  := ${ECR}/onboarding-backend-kw
 
 # 빌드 명령
 build:
