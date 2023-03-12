@@ -8,11 +8,11 @@ ECR_URI_SERVER  := ${ECR}/onboarding-backend-kw
 
 # 빌드 명령
 build:
-	docker build -f _proxy.Dockerfile -t ${ECR_URI_PROXY} .;
-	docker build -f _server.Dockerfile -t ${ECR_URI_SERVER} ../;
+	docker build -f proxy.Dockerfile -t ${ECR_URI_PROXY} .;
+	docker build -f server.Dockerfile -t ${ECR_URI_SERVER} ../;
 
 # push(ecr에 도커이미지 push) 명령
 push:
-	@aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${ECR}
-	@docker push ${ECR_URI_PROXY}
-	@docker push ${ECR_URI_SERVER}
+	aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${ECR}
+	docker push ${ECR_URI_PROXY}
+	docker push ${ECR_URI_SERVER}
