@@ -13,8 +13,6 @@ build:
 
 # push(ecr에 도커이미지 push) 명령
 push:
-	@aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 497217256558.dkr.ecr.ap-northeast-1.amazonaws.com
-	@docker push ${ECR_IMG_COMMIT_SERVER}
-	@docker push ${ECR_IMG_LATEST_SERVER}
-	@docker push ${ECR_IMG_COMMIT_PROXY}
-	@docker push ${ECR_IMG_LATEST_PROXY}
+	@aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${ECR}
+	@docker push ${ECR_URI_PROXY}
+	@docker push ${ECR_URI_SERVER}
