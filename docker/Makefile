@@ -8,8 +8,8 @@ ECR_URI_SERVER  := ${ECR_URI}/onboarding-backend-kw
 
 # 빌드 명령
 build:
-    docker build -f _proxy.Dockerfile -t ${ECR_URI_PROXY} .;
-    docker build -f _server.Dockerfile -t ${ECR_URI_SERVER} ../;
+	docker build -f _proxy.Dockerfile -t ${ECR_URI_PROXY} .;
+	docker build -f _server.Dockerfile -t ${ECR_URI_SERVER} ../;
 
 # push(ecr에 도커이미지 push) 명령
 push:
